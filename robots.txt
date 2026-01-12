@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /package.json
+Disallow: /package-lock.json
+
+Sitemap: https://example.com/sitemap.xml
+

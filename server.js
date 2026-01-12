@@ -5,6 +5,7 @@ const compression = require('compression');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const BASE_URL = process.env.BASE_URL || 'https://example.com';
 
 // Simple in-memory cache for HTML pages (LRU-like with max size)
 const cache = new Map();
@@ -83,6 +84,39 @@ app.get('/infografico/:id', (req, res) => {
   }
 });
 
+// Sitemap XML para SEO
+app.get('/sitemap.xml', (req, res) => {
+  const sitemapPath = path.resolve(__dirname, 'sitemap.xml');
+  if (fs.existsSync(sitemapPath)) {
+    let sitemap = fs.readFileSync(sitemapPath, 'utf-8');
+    // Substitui a URL base se necessário
+    if (BASE_URL !== 'https://example.com') {
+      sitemap = sitemap.replace(/https:\/\/example\.com/g, BASE_URL);
+    }
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=3600'); // cache por 1 hora
+    return res.send(sitemap);
+  }
+  return res.status(404).send('Sitemap não encontrado');
+});
+
+// Robots.txt para SEO
+app.get('/robots.txt', (req, res) => {
+  const robotsTxt = `User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /package.json
+Disallow: /package-lock.json
+
+Sitemap: ${BASE_URL}/sitemap.xml
+`;
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  res.setHeader('Cache-Control', 'public, max-age=86400'); // cache por 1 dia
+  return res.send(robotsTxt);
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor iniciado em http://localhost:${PORT}`);
+  console.log(`URL base configurada: ${BASE_URL}`);
+  console.log(`Sitemap disponível em: ${BASE_URL}/sitemap.xml`);
 });

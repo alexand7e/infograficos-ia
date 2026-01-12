@@ -26,7 +26,11 @@
    - `http://localhost:3000/infografico/1` (navegação com `<` e `>`)
 
 ## Rotas
-- `/infografico/1` a `/infografico/10`
+- `/` - Página de introdução
+- `/roadmap` - Roadmap completo com 15 tópicos
+- `/infografico/1` a `/infografico/10` - Infográficos individuais
+- `/sitemap.xml` - Sitemap para SEO
+- `/robots.txt` - Arquivo robots.txt para crawlers
 - Arquivos servidos com cache estático (assets) e cache em memória (páginas).
 
 ## Acessibilidade
@@ -36,6 +40,18 @@
 ## SEO
 - Metadados por página: título, descrição, palavras-chave e canonical.
 - Open Graph básico configurado.
+- Sitemap XML (`/sitemap.xml`) com todas as páginas do site.
+- Robots.txt configurado para permitir indexação.
+- Links para sitemap nas páginas principais.
+
+### Configuração da URL Base
+Para produção, configure a variável de ambiente `BASE_URL` com a URL do seu domínio:
+```bash
+export BASE_URL=https://www.governo.piaui.gov.br/ia
+npm start
+```
+
+O servidor substituirá automaticamente `https://example.com` no sitemap.xml pela URL configurada.
 
 ## Estrutura dos Tópicos
 1. Ciclo de Machine Learning
