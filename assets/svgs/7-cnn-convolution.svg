@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-label="CNN - Convolução com Kernel deslizando">
+  <style>
+    .imgcell { fill: #E5E7EB; stroke: #CBD5E1; }
+    .kernel { fill: rgba(244,196,48,0.3); stroke: #F4C430; stroke-width: 2; animation: slide 4s infinite alternate; }
+    @keyframes slide {
+      0% { transform: translate(0,0); }
+      50% { transform: translate(80px,40px); }
+      100% { transform: translate(160px,0); }
+    }
+    text { font: 700 11px Montserrat, Arial, sans-serif; fill: #0A2540; }
+  </style>
+  <!-- Image grid 5x5 -->
+  <g transform="translate(20,20)">
+    <g>
+      <!-- rows -->
+      <rect x="0" y="0" width="30" height="30" class="imgcell"/>
+      <rect x="30" y="0" width="30" height="30" class="imgcell"/>
+      <rect x="60" y="0" width="30" height="30" class="imgcell"/>
+      <rect x="90" y="0" width="30" height="30" class="imgcell"/>
+      <rect x="120" y="0" width="30" height="30" class="imgcell"/>
+
+      <rect x="0" y="30" width="30" height="30" class="imgcell"/>
+      <rect x="30" y="30" width="30" height="30" class="imgcell"/>
+      <rect x="60" y="30" width="30" height="30" class="imgcell"/>
+      <rect x="90" y="30" width="30" height="30" class="imgcell"/>
+      <rect x="120" y="30" width="30" height="30" class="imgcell"/>
+
+      <rect x="0" y="60" width="30" height="30" class="imgcell"/>
+      <rect x="30" y="60" width="30" height="30" class="imgcell"/>
+      <rect x="60" y="60" width="30" height="30" class="imgcell"/>
+      <rect x="90" y="60" width="30" height="30" class="imgcell"/>
+      <rect x="120" y="60" width="30" height="30" class="imgcell"/>
+
+      <rect x="0" y="90" width="30" height="30" class="imgcell"/>
+      <rect x="30" y="90" width="30" height="30" class="imgcell"/>
+      <rect x="60" y="90" width="30" height="30" class="imgcell"/>
+      <rect x="90" y="90" width="30" height="30" class="imgcell"/>
+      <rect x="120" y="90" width="30" height="30" class="imgcell"/>
+
+      <rect x="0" y="120" width="30" height="30" class="imgcell"/>
+      <rect x="30" y="120" width="30" height="30" class="imgcell"/>
+      <rect x="60" y="120" width="30" height="30" class="imgcell"/>
+      <rect x="90" y="120" width="30" height="30" class="imgcell"/>
+      <rect x="120" y="120" width="30" height="30" class="imgcell"/>
+    </g>
+    <!-- Kernel 3x3 -->
+    <rect x="0" y="0" width="90" height="90" class="kernel"/>
+  </g>
+  <text x="200" y="180" text-anchor="middle">Kernel desliza extraindo features</text>
+</svg>

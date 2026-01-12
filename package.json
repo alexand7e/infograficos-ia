@@ -1,0 +1,19 @@
+{
+  "name": "infograficos-ia",
+  "version": "1.0.0",
+  "description": "Servidor Express para infográficos educacionais de IA do Governo do Piauí",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "dev": "NODE_ENV=development node server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

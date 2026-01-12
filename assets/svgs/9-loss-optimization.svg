@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-label="Função de Perda e Otimização">
+  <style>
+    .axis { stroke: #0A2540; stroke-width: 2; }
+    .curve { fill: none; stroke: #0B6B3A; stroke-width: 3; }
+    .point { fill: #F4C430; stroke: #0A2540; stroke-width: 2; animation: move 3s infinite alternate ease-in-out; }
+    @keyframes move {
+      0% { transform: translate(0,0); }
+      100% { transform: translate(-120px,30px); }
+    }
+    text { font: 700 11px Montserrat, Arial, sans-serif; fill: #0A2540; }
+  </style>
+  <line x1="40" y1="160" x2="320" y2="160" class="axis"/>
+  <line x1="40" y1="160" x2="40" y2="40" class="axis"/>
+  <path d="M40,60 C140,30 220,140 320,100" class="curve"/>
+  <g transform="translate(260,110)">
+    <circle cx="0" cy="0" r="8" class="point"/>
+  </g>
+  <text x="60" y="50">Perda</text>
+  <text x="280" y="180">Parâmetro</text>
+</svg>

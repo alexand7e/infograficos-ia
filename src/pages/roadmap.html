@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap de IA — Governo do Piauí</title>
+  <meta name="description" content="Roadmap educacional com 15 tópicos de IA: fundamentos, histórico, transformers, LLMs, treinamento, RLHF, RAG, ética e mais.">
+  <meta name="keywords" content="IA, Machine Learning, Deep Learning, Transformers, LLM, RLHF, RAG, Ética, Roadmap">
+  <meta property="og:title" content="Roadmap de IA — 15 Tópicos">
+  <meta property="og:description" content="Guia progressivo e validado por JSON Schema, com vídeos e explicações claras.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="/roadmap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { piGreen:'#0B6B3A', piYellow:'#F4C430', piBlue:'#0A2540', piGray:'#F2F2F2' },
+      fontFamily: { sans:['"Source Sans 3"','sans-serif'], display:['"Montserrat"','sans-serif'] },
+      boxShadow: { 'poster':'0 20px 50px -12px rgba(0,0,0,0.25)' }
+    } } }
+  </script>
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <script src="https://cdn.jsdelivr.net/npm/ajv@8/dist/ajv.min.js"></script>
+</head>
+<body class="text-piBlue font-sans">
+  <div class="container-page shadow-poster rounded-2xl overflow-hidden my-4 mx-4">
+    <header class="bg-piGray px-8 py-8 border-b-8 border-piGreen flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-piYellow opacity-10 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+      <div class="flex items-center gap-4 z-10">
+        <div class="w-16 h-16 bg-piGreen text-white rounded-full flex items-center justify-center border-4 border-piYellow shadow-md shrink-0">
+          <span class="font-display font-bold text-2xl">PI</span>
+        </div>
+        <div>
+          <h2 class="text-piGreen font-bold font-display text-sm tracking-widest uppercase">Governo do Estado do Piauí</h2>
+          <h1 class="text-piBlue font-display font-extrabold text-2xl md:text-3xl">Roadmap Educacional de IA</h1>
+          <span class="text-piGreen font-semibold text-base md:text-lg bg-piYellow px-2 text-piBlue inline-block mt-1 rounded">Fundamentos e Prática (15 Tópicos)</span>
+        </div>
+      </div>
+      <div class="mt-4 md:mt-0 text-center md:text-right z-10 flex flex-col md:flex-row items-center gap-4">
+        <div id="schema-status" class="status-pill invalid hidden">Validando...</div>
+        <button id="hc-toggle" class="px-4 py-2 rounded-md bg-piBlue text-white text-sm font-bold shadow hover:opacity-90 transition-opacity" aria-pressed="false" aria-label="Alternar alto contraste">
+          <i class="fas fa-adjust mr-2"></i>Alto Contraste
+        </button>
+      </div>
+    </header>
+    
+    <main class="p-6 md:p-10 flex-grow bg-gray-50">
+      <div class="text-center mb-10">
+        <span class="bg-piBlue text-white px-6 py-2 rounded-full font-bold uppercase text-sm tracking-wide shadow-md inline-flex items-center">
+          <i class="fas fa-list-check mr-2"></i> Sequência Progressiva (1 → 15)
+        </span>
+      </div>
+      <div id="topics-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </main>
+    
+    <footer class="bg-piGreen text-white py-8 text-center border-t-8 border-piYellow relative">
+      <div class="container mx-auto px-4">
+        <p class="font-display font-bold text-lg italic mb-4">“Dados, inovação e inteligência para transformar o Piauí.”</p>
+        <div class="flex justify-center items-center gap-2 text-sm opacity-80">
+          <span>Governo do Estado do Piauí</span>
+          <span>&bull;</span>
+          <span>2024</span>
+        </div>
+      </div>
+    </footer>
+    
+    <nav class="fixed bottom-6 right-6 flex items-center gap-2 z-50">
+      <a href="/roadmap" class="pointer-events-none opacity-50 bg-gray-300 text-gray-600 w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg" aria-disabled="true" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+      </a>
+      <a href="/infografico/1" class="bg-piBlue text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg hover:bg-piGreen hover:scale-110 transition-all duration-300" aria-label="Próximo">
+        <i class="fas fa-chevron-right"></i>
+      </a>
+    </nav>
+  </div>
+
+  <script>
+    // Initialize
+    bootstrap();
+
+    function bootstrap(){
+      const btn=document.getElementById('hc-toggle');
+      if(btn){btn.addEventListener('click',()=>{const a=document.body.classList.toggle('hc');btn.setAttribute('aria-pressed',String(a));});}
+      
+      const status=document.getElementById('schema-status');
+      const grid=document.getElementById('topics-grid');
+      
+      fetch('/src/data/roadmap.json')
+        .then(response => {
+          if (!response.ok) throw new Error('Erro ao carregar JSON');
+          return response.json();
+        })
+        .then(data => {
+          // Hide status if valid to keep UI clean
+          status.classList.add('hidden');
+          
+          grid.innerHTML="";
+          data.topics.forEach((t, index) => {
+            const card=document.createElement('div');
+            card.className="topic-card bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:border-piGreen/30 transition-all duration-300 flex flex-col";
+            card.style.opacity = '0'; // Initial state for animation
+            card.style.animationDelay = `${index * 100}ms`; // Staggered animation
+            card.classList.add('animate-fade-in-up');
+            
+            const title=document.createElement('h3');
+            title.className="font-display font-bold text-piBlue text-xl mb-3 flex items-center";
+            title.innerHTML = `<span class="bg-piYellow text-piBlue w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm shadow-sm">${t.id}</span> ${getTopicTitle(t.id)}`;
+            
+            const text=document.createElement('p');
+            text.className="text-base text-gray-600 mb-5 leading-relaxed flex-grow";
+            text.textContent=t.text;
+            
+            const videoWrap=document.createElement('div');
+            videoWrap.className = "rounded-lg overflow-hidden shadow-inner bg-gray-100 mb-4";
+            videoWrap.innerHTML=t.video;
+
+            const linkBtn = document.createElement('a');
+            linkBtn.href = t.article;
+            linkBtn.target = "_blank";
+            linkBtn.className = "inline-flex items-center justify-center w-full px-4 py-2 bg-piBlue text-white text-sm font-bold rounded hover:bg-piGreen transition-colors mt-auto";
+            linkBtn.innerHTML = '<i class="fas fa-book-open mr-2"></i> Ler Artigo Completo';
+            
+            card.appendChild(title);
+            card.appendChild(text);
+            card.appendChild(videoWrap);
+            card.appendChild(linkBtn);
+            grid.appendChild(card);
+          });
+        })
+        .catch(e => {
+          status.textContent="Erro ao ler JSON";
+          status.classList.remove('valid','hidden');
+          status.classList.add('invalid');
+          console.error(e);
+        });
+    }
+    
+    function getTopicTitle(id){
+      const map={1:"Guarda-Chuva da IA",2:"Histórico Acelerado",3:"Como a Máquina Aprende",4:"Transformers",5:"LLM: Next Token Prediction",6:"Parâmetros",7:"Temperatura",8:"Infraestrutura: GPUs",9:"RLHF",10:"Evolução e Multimodalidade",11:"Alucinação",12:"Janela de Contexto",13:"RAG",14:"Prompt Engineering",15:"Viés e Ética"};
+      return map[id]||`Tópico ${id}`;
+    }
+  </script>
+</body>
+</html>

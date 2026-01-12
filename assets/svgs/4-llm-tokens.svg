@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" role="img" aria-label="LLM - Sequência de Tokens">
+  <style>
+    .tok { fill: #0A2540; }
+    .tok.active { fill: #F4C430; }
+    .dash { stroke: #0B6B3A; stroke-width: 2; stroke-dasharray: 6; animation: run 2s linear infinite; }
+    @keyframes run { to { stroke-dashoffset: 36; } }
+    text { font: 700 11px Montserrat, Arial, sans-serif; fill: #ffffff; }
+  </style>
+  <rect x="20" y="30" width="60" height="30" rx="6" class="tok active"/>
+  <text x="50" y="50" text-anchor="middle">O</text>
+  <rect x="90" y="30" width="60" height="30" rx="6" class="tok"/>
+  <text x="120" y="50" text-anchor="middle">cérebro</text>
+  <rect x="160" y="30" width="60" height="30" rx="6" class="tok"/>
+  <text x="190" y="50" text-anchor="middle">humano</text>
+  <rect x="230" y="30" width="60" height="30" rx="6" class="tok"/>
+  <text x="260" y="50" text-anchor="middle">é</text>
+  <rect x="300" y="30" width="60" height="30" rx="6" class="tok"/>
+  <text x="330" y="50" text-anchor="middle">incrível</text>
+  <path d="M50,75 H330" class="dash"/>
+</svg>

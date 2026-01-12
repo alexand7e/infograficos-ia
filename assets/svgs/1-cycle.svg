@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="Ciclo de Machine Learning">
+  <style>
+    .arrow { fill: none; stroke: #0A2540; stroke-width: 3; marker-end: url(#m); }
+    .step { fill: #F4C430; stroke: #0A2540; stroke-width: 2; }
+    .pulse { animation: p 2s infinite; }
+    @keyframes p {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.06); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .flow { stroke-dasharray: 8; animation: f 3s linear infinite; }
+    @keyframes f {
+      to { stroke-dashoffset: 48; }
+    }
+    text { font: 700 10px Montserrat, Arial, sans-serif; fill: #0A2540; }
+  </style>
+  <defs>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0A2540"/>
+    </marker>
+  </defs>
+  <!-- Steps -->
+  <rect x="20" y="20" width="60" height="30" rx="6" class="step pulse"/>
+  <text x="50" y="40" text-anchor="middle">Coleta</text>
+  <rect x="120" y="20" width="60" height="30" rx="6" class="step"/>
+  <text x="150" y="40" text-anchor="middle">Pré-proc.</text>
+  <rect x="220" y="20" width="80" height="30" rx="6" class="step"/>
+  <text x="260" y="40" text-anchor="middle">Seleção</text>
+  <rect x="220" y="130" width="80" height="30" rx="6" class="step"/>
+  <text x="260" y="150" text-anchor="middle">Validação</text>
+  <rect x="120" y="130" width="60" height="30" rx="6" class="step"/>
+  <text x="150" y="150" text-anchor="middle">Ajuste</text>
+  <rect x="20" y="130" width="80" height="30" rx="6" class="step pulse"/>
+  <text x="60" y="150" text-anchor="middle">Deploy</text>
+  <!-- Arrows -->
+  <path d="M80,35 H120" class="arrow flow"/>
+  <path d="M180,35 H220" class="arrow flow"/>
+  <path d="M260,50 V130" class="arrow flow"/>
+  <path d="M220,145 H180" class="arrow flow"/>
+  <path d="M150,145 H100" class="arrow flow"/>
+  <path d="M60,130 V60" class="arrow flow"/>
+</svg>
