@@ -29,7 +29,7 @@ function setToCache(key, value) {
 app.use(compression());
 
 // Serve static assets with long-term caching
-app.use(express.static(path.resolve(__dirname), {
+app.use('/assets', express.static(path.join(__dirname, 'assets'), {
   etag: true,
   maxAge: '1d',
   setHeaders: (res, filePath) => {
@@ -39,8 +39,11 @@ app.use(express.static(path.resolve(__dirname), {
   }
 }));
 
+// Serve src folder for CSS, JSON, etc.
+app.use('/src', express.static(path.join(__dirname, 'src')));
+
 app.get('/', (req, res) => {
-  const index = path.resolve(__dirname, 'src', 'pages', 'index.html');
+  const index = path.join(__dirname, 'src', 'pages', 'index.html');
   if (fs.existsSync(index)) {
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     return res.sendFile(index);
@@ -49,7 +52,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/roadmap', (req, res) => {
-  const roadmap = path.resolve(__dirname, 'src', 'pages', 'roadmap.html');
+  const roadmap = path.join(__dirname, 'src', 'pages', 'roadmap.html');
   if (fs.existsSync(roadmap)) {
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     return res.sendFile(roadmap);
@@ -62,9 +65,9 @@ app.get('/infografico/:id', (req, res) => {
   if (!/^\d+$/.test(id)) {
     return res.status(400).send('ID inválido');
   }
-  let file = path.resolve(__dirname, 'src', 'pages', `${id}.page.html`);
+  let file = path.join(__dirname, 'src', 'pages', `${id}.page.html`);
   if (!fs.existsSync(file)) {
-    file = path.resolve(__dirname, `${id}.page.html`);
+    file = path.join(__dirname, `${id}.page.html`);
   }
 
   try {
@@ -87,7 +90,7 @@ app.get('/infografico/:id', (req, res) => {
 
 // Sitemap XML para SEO
 app.get('/sitemap.xml', (req, res) => {
-  const sitemapPath = path.resolve(__dirname, 'sitemap.xml');
+  const sitemapPath = path.join(__dirname, 'sitemap.xml');
   if (fs.existsSync(sitemapPath)) {
     let sitemap = fs.readFileSync(sitemapPath, 'utf-8');
     // Substitui a URL base se necessário
