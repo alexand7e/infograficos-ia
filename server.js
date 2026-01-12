@@ -38,12 +38,12 @@ app.use(express.static(path.resolve(__dirname), {
 }));
 
 app.get('/', (req, res) => {
-  const roadmap = path.resolve(__dirname, 'src', 'pages', 'roadmap.html');
-  if (fs.existsSync(roadmap)) {
+  const index = path.resolve(__dirname, 'src', 'pages', 'index.html');
+  if (fs.existsSync(index)) {
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    return res.sendFile(roadmap);
+    return res.sendFile(index);
   }
-  return res.redirect('/infografico/1');
+  return res.redirect('/roadmap');
 });
 
 app.get('/roadmap', (req, res) => {

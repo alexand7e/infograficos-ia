@@ -33,7 +33,7 @@
         <header class="bg-piGray px-8 py-8 border-b-8 border-piGreen flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
             <div class="absolute top-0 right-0 w-64 h-64 bg-piYellow opacity-10 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
             <div class="flex items-center gap-4 z-10">
-                <div class="w-16 h-16 bg-piGreen text-white rounded-full flex items-center justify-center border-4 border-piYellow shadow-md"><span class="font-display font-bold text-2xl">PI</span></div>
+                <img src="/assets/logo-gov.png" alt="Governo do Piauí" class="w-24 h-24 object-contain shrink-0">
                 <div>
                     <h2 class="text-piGreen font-bold font-display text-sm tracking-widest uppercase">Governo do Estado do Piauí</h2>
                     <h1 class="text-piBlue font-display font-extrabold text-3xl">Machine Learning</h1>
@@ -51,6 +51,21 @@
                     <i class="fas fa-sync-alt mr-2"></i> Processo Iterativo
                 </span>
             </div>
+            
+            <div class="max-w-3xl mx-auto mb-8 text-gray-700 leading-relaxed">
+                <p class="mb-4 text-base">
+                    Machine Learning é um processo iterativo e contínuo que transforma dados brutos em modelos inteligentes capazes de fazer previsões e tomar decisões. 
+                    Diferente da programação tradicional, onde regras são explicitamente definidas, o Machine Learning permite que os sistemas aprendam padrões 
+                    automaticamente através da experiência com dados.
+                </p>
+                <p class="text-base">
+                    O ciclo começa com a coleta e preparação dos dados, passa pelo treinamento e validação do modelo, e culmina no deployment. 
+                    No entanto, o processo não termina aí: o monitoramento contínuo gera novos dados que reiniciam o ciclo, permitindo que o modelo 
+                    melhore constantemente e se adapte a novas situações. Esta abordagem é especialmente valiosa no setor público, onde os dados 
+                    governamentais podem ser utilizados para otimizar serviços, prever demandas e melhorar a tomada de decisões.
+                </p>
+            </div>
+
             <div class="flex justify-center mb-8">
                 <object data="/assets/svgs/1-cycle.svg" type="image/svg+xml" class="w-full max-w-lg" aria-label="Ciclo de Machine Learning">Ciclo de Machine Learning</object>
             </div>
@@ -130,13 +145,26 @@
                 </div>
             </div>
         </div>
-        <footer class="bg-piGreen text-white py-6 text-center border-t-8 border-piYellow">
-            <p class="font-display font-bold text-lg italic mb-2">“Dados, inovação e inteligência para transformar o Piauí.”</p>
-            <div class="flex justify-center items-center gap-2 text-sm opacity-80"><span>Governo do Estado do Piauí</span><span>&bull;</span><span>2024</span></div>
+        <footer class="bg-piGreen text-white py-8 text-center border-t-8 border-piYellow relative">
+            <div class="container mx-auto px-4">
+                <p class="font-display font-bold text-lg italic mb-4">"Dados, inovação e inteligência para transformar o Piauí."</p>
+                <div class="flex justify-center items-center gap-2 text-sm opacity-80">
+                    <span>Governo do Estado do Piauí</span>
+                    <span>&bull;</span>
+                    <span>2026</span>
+                </div>
+                <div class="mt-6 flex justify-center">
+                    <img src="/assets/capacitia-logo.png" alt="Capacitia" class="h-20 opacity-80 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
         </footer>
         <nav class="fixed bottom-6 right-6 flex items-center gap-2 z-50">
-            <a href="/infografico/1" class="pointer-events-none opacity-50 bg-gray-300 text-gray-600 w-10 h-10 rounded-full flex items-center justify-center font-bold" aria-disabled="true" aria-label="Anterior">&lt;</a>
-            <a href="/infografico/2" class="bg-piBlue text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shadow hover:bg-piGreen transition" aria-label="Próximo">&gt;</a>
+            <a href="/roadmap" class="bg-piBlue text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg hover:bg-piGreen hover:scale-110 transition-all duration-300" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <a href="/infografico/2" class="bg-piBlue text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg hover:bg-piGreen hover:scale-110 transition-all duration-300" aria-label="Próximo">
+                <i class="fas fa-chevron-right"></i>
+            </a>
         </nav>
     </div>
     <script>

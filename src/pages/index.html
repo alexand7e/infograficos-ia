@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introdução — Roadmap Educacional de IA | Governo do Piauí</title>
+  <meta name="description" content="Bem-vindo ao Roadmap Educacional de Inteligência Artificial do Governo do Piauí. Um guia progressivo com 15 tópicos fundamentais.">
+  <meta name="keywords" content="IA, Inteligência Artificial, Machine Learning, Governo do Piauí, Educação, Roadmap">
+  <meta property="og:title" content="Roadmap Educacional de IA — Governo do Piauí">
+  <meta property="og:description" content="Explore os fundamentos da Inteligência Artificial através de um guia visual e didático.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { piGreen:'#0B6B3A', piYellow:'#F4C430', piBlue:'#0A2540', piGray:'#F2F2F2' },
+      fontFamily: { sans:['"Source Sans 3"','sans-serif'], display:['"Montserrat"','sans-serif'] },
+      boxShadow: { 'poster':'0 20px 50px -12px rgba(0,0,0,0.25)' }
+    } } }
+  </script>
+  <link rel="stylesheet" href="/src/styles/base.css">
+</head>
+<body class="text-piBlue font-sans">
+  <div class="container-page shadow-poster rounded-2xl overflow-hidden my-4 mx-4">
+    <header class="bg-piGray px-8 py-8 border-b-8 border-piGreen flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-piYellow opacity-10 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+      <div class="flex items-center gap-4 z-10">
+        <img src="/assets/logo-gov.png" alt="Governo do Piauí" class="w-16 h-30 object-contain shrink-0">
+        <div>
+          <h2 class="text-piGreen font-bold font-display text-sm tracking-widest uppercase">Governo do Estado do Piauí</h2>
+          <h1 class="text-piBlue font-display font-extrabold text-2xl md:text-3xl">Roadmap Educacional de IA</h1>
+          <span class="text-piGreen font-semibold text-base md:text-lg bg-piYellow px-2 text-piBlue inline-block mt-1 rounded">Bem-vindo</span>
+        </div>
+      </div>
+      <div class="mt-4 md:mt-0 text-center md:text-right z-10 flex flex-col md:flex-row items-center gap-4">
+        <button id="hc-toggle" class="px-4 py-2 rounded-md bg-piBlue text-white text-sm font-bold shadow hover:opacity-90 transition-opacity" aria-pressed="false" aria-label="Alternar alto contraste">
+          <i class="fas fa-adjust mr-2"></i>Alto Contraste
+        </button>
+      </div>
+    </header>
+    
+    <main class="p-6 md:p-10 flex-grow bg-gray-50">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="font-display font-bold text-3xl md:text-4xl text-piBlue mb-4">Explore os Fundamentos da Inteligência Artificial</h2>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Este roadmap foi desenvolvido para apresentar de forma clara e progressiva os conceitos essenciais da Inteligência Artificial, 
+            desde os fundamentos até tópicos avançados como Transformers, LLMs e ética em IA.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-md mb-8 border-l-4 border-piGreen">
+          <h3 class="font-display font-bold text-2xl text-piGreen mb-4 flex items-center">
+            <i class="fas fa-lightbulb mr-3 text-piYellow"></i>Como Navegar
+          </h3>
+          <div class="space-y-4 text-gray-700">
+            <p>
+              <strong class="text-piBlue">1. Roadmap Completo:</strong> Comece visualizando todos os 15 tópicos disponíveis em uma visão geral interativa. 
+              Cada tópico inclui vídeos explicativos e links para artigos complementares.
+            </p>
+            <p>
+              <strong class="text-piBlue">2. Infográficos Detalhados:</strong> Explore cada conceito através de infográficos visuais que combinam 
+              diagramas animados com explicações didáticas. Os infográficos são organizados em sequência progressiva para facilitar o aprendizado.
+            </p>
+            <p>
+              <strong class="text-piBlue">3. Aprendizado Progressivo:</strong> Recomendamos seguir a ordem sugerida, pois cada tópico constrói 
+              sobre os conceitos anteriores, criando uma base sólida de conhecimento.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-6 shadow-md text-center border-t-4 border-piGreen">
+            <div class="text-4xl text-piGreen mb-4"><i class="fas fa-book-open"></i></div>
+            <h4 class="font-display font-bold text-lg text-piBlue mb-2">15 Tópicos</h4>
+            <p class="text-sm text-gray-600">Conceitos fundamentais desde Machine Learning até Ética em IA</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-md text-center border-t-4 border-piYellow">
+            <div class="text-4xl text-piYellow mb-4"><i class="fas fa-video"></i></div>
+            <h4 class="font-display font-bold text-lg text-piBlue mb-2">Vídeos Explicativos</h4>
+            <p class="text-sm text-gray-600">Conteúdo visual para facilitar o entendimento</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-md text-center border-t-4 border-piBlue">
+            <div class="text-4xl text-piBlue mb-4"><i class="fas fa-chart-line"></i></div>
+            <h4 class="font-display font-bold text-lg text-piBlue mb-2">Aprendizado Progressivo</h4>
+            <p class="text-sm text-gray-600">Sequência lógica do básico ao avançado</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="/roadmap" class="inline-flex items-center justify-center px-8 py-4 bg-piBlue text-white text-lg font-bold rounded-lg shadow-lg hover:bg-piGreen transition-all duration-300 transform hover:scale-105">
+            <i class="fas fa-arrow-right mr-3"></i>Começar Jornada
+          </a>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="bg-piGreen text-white py-8 text-center border-t-8 border-piYellow relative">
+      <div class="container mx-auto px-4">
+        <p class="font-display font-bold text-lg italic mb-4">"Dados, inovação e inteligência para transformar o Piauí."</p>
+        <div class="flex justify-center items-center gap-2 text-sm opacity-80">
+          <span>Governo do Estado do Piauí</span>
+          <span>&bull;</span>
+          <span>2026</span>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <img src="/assets/capacitia-logo.png" alt="Capacitia" class="h-20 opacity-80 hover:opacity-100 transition-opacity">
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const btn = document.getElementById('hc-toggle');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const active = document.body.classList.toggle('hc');
+        btn.setAttribute('aria-pressed', String(active));
+      });
+    }
+  </script>
+</body>
+</html>
+

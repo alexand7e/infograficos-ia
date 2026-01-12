@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label="Rede Neural - Entrada, Oculta e Saída">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label="Rede Neural - Entrada, Oculta e Saída" preserveAspectRatio="xMidYMid meet" width="100%" height="auto">
   <style>
     .line { stroke: #CBD5E1; stroke-width: 2; stroke-dasharray: 10; animation: flow 2.5s linear infinite; }
     @keyframes flow { to { stroke-dashoffset: 40; } }

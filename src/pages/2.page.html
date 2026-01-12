@@ -58,6 +58,21 @@
                     <i class="fas fa-brain mr-2"></i> Rede Neural (Entrada → Oculta → Saída)
                 </span>
             </div>
+            
+            <div class="max-w-3xl mx-auto mb-8 text-gray-700 leading-relaxed">
+                <p class="mb-4 text-base">
+                    Redes Neurais Artificiais são sistemas computacionais inspirados no funcionamento do cérebro humano, compostos por unidades 
+                    interconectadas chamadas neurônios artificiais. Cada neurônio recebe informações, processa através de uma função matemática 
+                    e transmite o resultado para outros neurônios através de conexões ponderadas.
+                </p>
+                <p class="text-base">
+                    A arquitetura básica consiste em três tipos de camadas: a camada de entrada recebe os dados iniciais, as camadas ocultas 
+                    realizam o processamento complexo extraindo padrões e características, e a camada de saída produz o resultado final. 
+                    Durante o treinamento, os pesos das conexões são ajustados para minimizar erros, permitindo que a rede aprenda a mapear 
+                    entradas para saídas desejadas de forma automática.
+                </p>
+            </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                 <div class="order-2 lg:order-1 text-center lg:text-left">
                     <h3 class="font-display font-bold text-lg text-piGreen mb-2">Entrada</h3>
@@ -93,21 +108,26 @@
             </div>
         </main>
 
-        <footer class="bg-piGreen text-white py-6 text-center border-t-8 border-piYellow">
-            <p class="font-display font-bold text-lg italic mb-2">“Dados, inovação e inteligência para transformar o Piauí.”</p>
-            <div class="flex justify-center items-center gap-2 text-sm opacity-80">
-                <span>Governo do Estado do Piauí</span>
-                <span>&bull;</span>
-                <span>2024</span>
+        <footer class="bg-piGreen text-white py-8 text-center border-t-8 border-piYellow relative">
+            <div class="container mx-auto px-4">
+                <p class="font-display font-bold text-lg italic mb-4">"Dados, inovação e inteligência para transformar o Piauí."</p>
+                <div class="flex justify-center items-center gap-2 text-sm opacity-80">
+                    <span>Governo do Estado do Piauí</span>
+                    <span>&bull;</span>
+                    <span>2026</span>
+                </div>
+                <div class="mt-6 flex justify-center">
+                    <img src="/assets/capacitia-logo.png" alt="Capacitia" class="h-20 opacity-80 hover:opacity-100 transition-opacity">
+                </div>
             </div>
         </footer>
 
         <nav class="fixed bottom-6 right-6 flex items-center gap-2 z-50">
-            <a href="/infografico/1" class="bg-piBlue text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shadow hover:bg-piGreen transition" aria-label="Anterior">
-                &lt;
+            <a href="/infografico/1" class="bg-piBlue text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg hover:bg-piGreen hover:scale-110 transition-all duration-300" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
             </a>
-            <a href="/infografico/3" class="bg-piBlue text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shadow hover:bg-piGreen transition" aria-label="Próximo">
-                &gt;
+            <a href="/infografico/3" class="bg-piBlue text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg hover:bg-piGreen hover:scale-110 transition-all duration-300" aria-label="Próximo">
+                <i class="fas fa-chevron-right"></i>
             </a>
         </nav>
     </div>

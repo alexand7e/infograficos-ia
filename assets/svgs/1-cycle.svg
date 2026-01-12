@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="Ciclo de Machine Learning">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="Ciclo de Machine Learning" preserveAspectRatio="xMidYMid meet" width="100%" height="auto">
   <style>
     .arrow { fill: none; stroke: #0A2540; stroke-width: 3; marker-end: url(#m); }
     .step { fill: #F4C430; stroke: #0A2540; stroke-width: 2; }

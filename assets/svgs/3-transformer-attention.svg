@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-label="Transformer - Self-Attention">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-label="Transformer - Self-Attention" preserveAspectRatio="xMidYMid meet" width="100%" height="auto">
   <style>
     .cell { fill: #E5E7EB; }
     .cell.h { fill: #F4C430; }

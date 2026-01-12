@@ -37,6 +37,22 @@
     </header>
     <main class="p-4 md:p-10">
       <div class="text-center mb-8"><span class="bg-piBlue text-white px-6 py-2 rounded-full font-bold uppercase text-sm tracking-wide shadow-md"><i class="fas fa-clock mr-2"></i> Linha do Tempo</span></div>
+      
+      <div class="max-w-3xl mx-auto mb-8 text-gray-700 leading-relaxed">
+        <p class="mb-4 text-base">
+          A história da Inteligência Artificial é marcada por avanços fundamentais que moldaram o campo como conhecemos hoje. O Teste de Turing, 
+          proposto em 1950, estabeleceu um marco conceitual para avaliar a inteligência de máquinas. Décadas depois, o desenvolvimento do 
+          algoritmo de Backpropagation em 1986 permitiu o treinamento eficiente de redes neurais multicamadas, abrindo caminho para o Deep Learning.
+        </p>
+        <p class="text-base">
+          A década de 1990 viu o surgimento de LeNet, uma das primeiras CNNs bem-sucedidas, demonstrando o potencial de redes convolucionais. 
+          Em 2012, AlexNet marcou o renascimento do Deep Learning, vencendo a competição ImageNet e inspirando uma nova geração de pesquisas. 
+          O ponto de virada definitivo veio em 2017 com o artigo "Attention is All You Need", que introduziu a arquitetura Transformer, 
+          revolucionando o processamento de linguagem natural e estabelecendo a base para os modelos de linguagem de grande escala que 
+          dominam a IA moderna.
+        </p>
+      </div>
+
       <div class="flex justify-center">
         <object data="/assets/svgs/10-evolution-timeline.svg" type="image/svg+xml" class="w-full max-w-xl" aria-label="Linha do Tempo">Linha do Tempo</object>
       </div>
@@ -48,13 +64,26 @@
         <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-piYellow"><h4 class="font-display font-bold text-piBlue mb-2">2017</h4><p class="text-sm text-gray-600">Transformer redefine NLP com atenção paralela.</p></div>
       </div>
     </main>
-    <footer class="bg-piGreen text-white py-6 text-center border-t-8 border-piYellow">
-      <p class="font-display font-bold text-lg italic mb-2">“Dados, inovação e inteligência para transformar o Piauí.”</p>
-      <div class="flex justify-center items-center gap-2 text-sm opacity-80"><span>Governo do Estado do Piauí</span><span>&bull;</span><span>2024</span></div>
+    <footer class="bg-piGreen text-white py-8 text-center border-t-8 border-piYellow relative">
+      <div class="container mx-auto px-4">
+        <p class="font-display font-bold text-lg italic mb-4">"Dados, inovação e inteligência para transformar o Piauí."</p>
+        <div class="flex justify-center items-center gap-2 text-sm opacity-80">
+          <span>Governo do Estado do Piauí</span>
+          <span>&bull;</span>
+          <span>2026</span>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <img src="/assets/capacitia-logo.png" alt="Capacitia" class="h-20 opacity-80 hover:opacity-100 transition-opacity">
+        </div>
+      </div>
     </footer>
     <nav class="fixed bottom-6 right-6 flex items-center gap-2 z-50">
-      <a href="/infografico/9" class="bg-piBlue text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shadow hover:bg-piGreen transition" aria-label="Anterior">&lt;</a>
-      <a href="/infografico/1" class="pointer-events-none opacity-50 bg-gray-300 text-gray-600 w-10 h-10 rounded-full flex items-center justify-center font-bold" aria-disabled="true" aria-label="Próximo">&gt;</a>
+      <a href="/infografico/9" class="bg-piBlue text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg hover:bg-piGreen hover:scale-110 transition-all duration-300" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+      </a>
+      <a href="/roadmap" class="bg-piBlue text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg hover:bg-piGreen hover:scale-110 transition-all duration-300" aria-label="Voltar ao Roadmap">
+        <i class="fas fa-home"></i>
+      </a>
     </nav>
   </div>
   <script>

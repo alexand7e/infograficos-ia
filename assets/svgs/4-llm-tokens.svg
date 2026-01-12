@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" role="img" aria-label="LLM - Sequência de Tokens">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" role="img" aria-label="LLM - Sequência de Tokens" preserveAspectRatio="xMidYMid meet" width="100%" height="auto">
   <style>
     .tok { fill: #0A2540; }
     .tok.active { fill: #F4C430; }
